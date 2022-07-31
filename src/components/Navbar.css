@@ -1,11 +1,21 @@
 .navbar {
-  background: rgb(255, 255, 255);
+  background: rgb(216, 216, 216);
   height: 80px;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-size: 1.2rem;
   padding: 40px;
+  z-index: 2;
+  box-shadow: 0px 10px 20px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.active {
+  background:rgb(216, 216, 216);
+  transition: 0.3s;
+  box-shadow: 0px 10px 20px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-logo {
@@ -15,15 +25,16 @@
   text-decoration: none;
   font-size: 2rem;
   position: absolute;
-  left: 40px;
+  left: 50px;
 }
 
-.CYS_logo_light {
+.CyperOps_logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 130px;
-  width: 130px;
+  height: 60px;
+  width: 60px;
+  margin-left: 40px;
 }
 
 .nav-menu {
@@ -50,13 +61,9 @@
 }
 
 .nav-links:hover {
-  background-color: #1888ff;
-  border-radius: 4px;
-  transition: all 0.2s ease-out;
-}
-
-.fa-bars {
-  color: rgb(0, 0, 0);
+  color: #1888ff;
+  border-bottom: 3px solid #1888ff;
+  transition: all 0.1s ease-out;
 }
 
 .nav-links-mobile {
@@ -67,25 +74,38 @@
   display: none;
 }
 
+/*
+.BgColour {
+  color: black;
+  transition: all 1s;
+  background-color: white;
+}
+*/ 
+
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
+  }
+
+  .navbar {
+    font-size: 1.5rem;
   }
 
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: 600%;
     position: absolute;
     top: 80px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    box-shadow: 2px 20px 30px -4px rgba(0, 0, 0, 0.43);
   }
 
   .nav-menu.active {
-    background: #242222;
+    background: rgb(216, 216, 216);
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -93,60 +113,55 @@
   }
 
   .nav-links {
+    justify-content: center;
     text-align: center;
     padding: 2rem;
     width: 100%;
-    display: table;
+    display: flex;
   }
 
   .nav-links:hover {
-    background-color: #1888ff;
-    border-radius: 0;
+    border-bottom: none;
+    color: #1888ff;
+    text-decoration: underline;
+    transition: all 0.1s ease-out;
   }
 
   .navbar-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .CYS_logo_light {
     position: absolute;
-    left: 40px;
+    left: 50px;
   }
 
   .menu-icon {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
+    position:absolute;
+    top: -12px;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-  }
-
-  .fa-times {
     color: rgb(0, 0, 0);
-    font-size: 2rem;
   }
 
   .nav-links-mobile {
     display: block;
     text-align: center;
     padding: 1.5rem;
-    margin: 2rem auto;
-    border-radius: 4px;
-    width: 80%;
+    margin: 1rem auto;
+    border-radius: 15px;
+    width: 40%;
     background: #1888ff;
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
+    box-shadow: 0px 10px 20px 8px rgba(0, 0, 0, 0.2);
   }
 
   .nav-links-mobile:hover {
-    background: #fff;
-    color: #1888ff;
+    background: rgb(216, 216, 216);
+    color: #000000;
+    border: 2px solid #1888ff;
     transition: 250ms;
+    box-shadow: none;
   }
 
   button {

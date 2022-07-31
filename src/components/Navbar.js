@@ -3,11 +3,14 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
-import logo from '../images/CYBER_OPS_Transparents.png';
+import Hamburger from 'hamburger-react'
+import logo from '../assets/CYBER_OPS_Transparent.png';
 
 function Navbar() {
+  
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [navbar, setNavbar] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -28,14 +31,27 @@ function Navbar() {
     }
   };
 
+  /*
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeBackground);
+  */
+
   return (
     <>
-      <nav className='navbar'>
+      <nav 
+        className= {navbar ? 'navbar active' : 'navbar'}>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}> 
-        <img className='CYS_logo_light' src={logo} alt=' ' /> 
+          <img className='CyperOps_logo' src={logo} alt=' ' /> 
         </Link>
         <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          <Hamburger toggled={click} />
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
@@ -61,7 +77,7 @@ function Navbar() {
 
           <li className='nav-item'>
             <Link
-              to='/products'
+              to='/members'
               className='nav-links'
               onClick={closeMobileMenu}
             >
@@ -75,7 +91,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Contact Us
+              Contact
             </Link>
           </li>
 
