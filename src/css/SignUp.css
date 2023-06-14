@@ -2,3 +2,51 @@
     background-color: rgb(216, 216, 216);
     height: 1000px;
 }
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 450px;
+}
+.loginForm{
+    background-color: #ededed;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 125px;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginForm input{
+    width: 100%;
+}
+.CyperOps_logo1{
+    width: 145px;
+    height: 155px;
+}
+
+.btn {
+    margin-right: 50px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--primary);
+    box-shadow: 0px 10px 20px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn:hover {
+    padding: 6px 18px;
+    transition: all 0.3s ease-out;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    border: 2px solid var(--primary);
+    box-shadow: none;
+  }
+  

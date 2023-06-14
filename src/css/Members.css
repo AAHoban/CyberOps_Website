@@ -5,28 +5,16 @@
 
 .memberContainer {
     background-color: rgb(216, 216, 216);
-    height: 100%;
-  }
+}
+.memberContainer h1 {
+  font-size: 45px;
+  padding: 60px 120px;
+}
+.memberContainer h2 {
+  text-align: center;
+  font-size: 32px;
+}
 
-  .header {
-    border: 2px solid black;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background: #000000;
-  }
-
-  .memberCards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 75%;
-    position: relative;
-  }
   
   .card {
     display: flex;
@@ -36,7 +24,7 @@
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.4);
     border-radius: 1em;
     background-color: rgb(216, 216, 216);
-    margin: 15px;
+    margin: 0;
   }
   
   .card__body {
@@ -51,20 +39,9 @@
     text-transform: capitalize;
   }
   
-  .footer {
+  .card_footer {
     text-align: right;
     padding: 10px;
-  }
-
-  h1{
-    text-align: center;
-    font-size: 45px;
-  }
-
-  h2{
-    text-align: center;
-    margin: 45px;
-    font-size: 35px;
   }
 
   img {

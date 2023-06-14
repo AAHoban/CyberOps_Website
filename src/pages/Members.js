@@ -1,133 +1,22 @@
 import React from 'react';
 import '../css/Members.css';
-import Aziz from '../assets/Aziz.png';
 import noProfileImg from '../assets/noProfileImg.png';
+import TeamCarsouel23 from '../components/teamCarsouel/TeamCarsouel-2023';
+import TeamCarsouel22 from '../components/teamCarsouel/TeamCarsouel-2022';
+import Footer from '../components/Footer/index';
+
 
 function Members() {
   return (
     <div className='memberContainer'>
-      <div className="header">
+      <div>
         <h1>Club Members</h1> 
-      </div> 
-
-        <div className='headings'>
-   
-          <h2>Club Leaders</h2>
-
-          <div className='memberCards'>
-            <div className="card">
-                  <div className="card__header">
-                    <img src={noProfileImg} alt="" />
-                  </div>
-                  <div className="card__body">
-                    <h4>Abdulaziz AlFahaid</h4>
-                  </div>
-                  <div className="footer">
-                    President
-                  </div>
-              </div>
-
-              <div className="card">
-                  <div className="card__header">
-                  <img src={noProfileImg} alt="" />
-                  </div>
-                  <div className="card__body">
-                    <h4>Bander AlRasheed</h4>
-                  </div>
-                  <div className="footer">
-                    Vice-President
-                  </div>
-              </div>
-        </div>
-    </div>
-
-<h2>Other Members</h2>  
-
-      <div className='memberCards'>
-          <div className="card">
-              <div className="card__header">
-              <img src={noProfileImg} alt="" />
-              </div>
-              <div className="card__body">
-                <h4>Ali AlHoban</h4>
-              </div>
-              <div className="footer">
-                Member
-              </div>
-          </div>
-
-          <div className="card">
-              <div className="card__header">
-              <img src={noProfileImg} alt="" />
-              </div>
-              <div className="card__body">
-                <h4>-------</h4>
-              </div>
-              <div className="footer">
-                Member
-              </div>
-          </div>
-
-          <div className="card">
-              <div className="card__header">
-              <img src={noProfileImg} alt="" />
-              </div>
-              <div className="card__body">
-                <h4>-------</h4>
-              </div>
-              <div className="footer">
-                Member
-              </div>
-          </div>
-
-          <div className="card">
-              <div className="card__header">
-              <img src={noProfileImg} alt="" />
-              </div>
-              <div className="card__body">
-                <h4>-------</h4>
-              </div>
-              <div className="footer">
-                Member
-              </div>
-          </div>
-
-          <div className="card">
-              <div className="card__header">
-              <img src={noProfileImg} alt="" />
-              </div>
-              <div className="card__body">
-                <h4>-------</h4>
-              </div>
-              <div className="footer">
-                Member
-              </div>
-          </div>
-
-          <div className="card">
-              <div className="card__header">
-              <img src={noProfileImg} alt="" />
-              </div>
-              <div className="card__body">
-                <h4>-------</h4>
-              </div>
-              <div className="footer">
-                Member
-              </div>
-          </div>
-
-          <div className="card">
-              <div className="card__header">
-              <img src={noProfileImg} alt="" />
-              </div>
-              <div className="card__body">
-                <h4>-------</h4>
-              </div>
-              <div className="footer">
-                Member
-              </div>
-          </div>
+        <h2>2022 - 2023 Team</h2>
+        <TeamCarsouel23 />
+        <h2>2021 - 2022 Team</h2>
+        <TeamCarsouel22 />
       </div>
+      <Footer /> 
     </div>
   );
 }

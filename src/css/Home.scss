@@ -1,0 +1,276 @@
+@import './theme-variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.homeContainer {
+  height: 100%;
+  padding-left: 60px;
+
+  .home {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;  
+    height: 100vh;
+    margin: auto;
+    gap: 2rem;
+    background: linear-gradient(45deg, #2090ae 0%, darken(#06122c, 50%) 100%);
+    background-size: 200% 200%;  
+    -webkit-animation: background 6s infinite linear;
+  
+    .Heading {
+      display: grid;
+      color: #ffffff;
+      text-transform: capitalize;
+      max-width: 650px;
+      font-size: 2rem;
+      z-index: 1;
+      position: absolute;
+      top: 1;
+      padding-top: 150px;
+      padding-left: 75px;
+  
+      .MainHeading {
+        margin: 25px 0px;
+        span {
+          color: transparent;
+          -webkit-text-stroke: 2px rgb(255, 255, 255);
+        }
+      }
+      p {
+        font-size: 26px;
+      }
+      .CyberopsLogo {
+        position: absolute;
+        height: auto;
+        top: 10rem;
+        right: -875px;
+        width: 12em;
+      }
+      button {
+        width: 30%;
+        font-size: 25px;
+        color: #000000;
+        background: #ffffff;
+        border: #ffffff solid 4px;
+        margin-top: 15px;
+        padding: 8px 3px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all ease-in-out 0.4s;
+      }
+      button:hover {
+        border-radius: 25px;
+        transition: all ease-in-out 0.4s;
+        color: #000000;
+      }
+    }
+  }
+  .Info{
+    @include themify($themes) {
+      background-color: themed('bodyBackgroundColor');
+      color: themed('textColor');
+    }
+    padding: 60px;
+     h1 {
+      font-size: 45px;
+     }
+    .InfoContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding: 60px;
+
+      .InfoCards {
+        @include themify($themes) {
+          background-color: themed('toggleBackground');
+        }
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      }    
+    
+      p{
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 30px;
+      }
+      h1 {
+        font-size: 45px;
+      }
+      .planHeading {
+        text-align: left;
+        background-color: #d8d8d8;
+        margin: 15px 0;
+        padding: 15px 15px;
+        border-radius: 8px;
+      
+        span {
+          font-size: 56px;
+        }
+        h3 {
+          font-size: 24px;
+        }
+        p{
+          font-size: 18px;
+          font-weight: 100;
+        }
+        .plusIcon {
+          float: right;
+        }
+      }
+    }  
+  }
+  .team {
+    @include themify($themes) {
+      background-color: themed('headerFooterBackground');
+      color: themed('textColor');
+    }
+    .teamContainer {
+      margin: auto;
+      width: 80%;
+      padding: 15px 60px;
+
+      .teamSwiper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 200px;
+        margin-bottom: 45px;
+      }
+    }
+        
+    p{
+      font-size: 20px;
+      margin-left: 45px;
+    }
+    h1 {
+      font-size: 45px;
+      padding-top: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .homeContainer {
+    .home {
+      .Heading {
+        font-size: 1.3rem;
+        padding: 200px 50px;
+        .MainHeading {
+          line-height: 35px;
+        }
+        p {
+          font-size: 20px;
+        }
+        button {
+          padding: 6px;
+          font-size: 18px;
+        }
+      }
+    }
+    .Info {
+      .InfoContainer {
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+    .team {
+      .teamContainer {
+        margin: auto;
+        width: 90%;
+        padding: 15px 60px;
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+
+  }
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
+
+
+@keyframes background { 
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  50% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  line-height: 55px;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1700px) {
+  .homeContainer {
+    .home {
+      .Heading {
+        img {
+          display: none;
+        }
+      }
+    }
+    .Info {
+      .InfoContainer {
+        .InfoCards {
+          h1 {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .homeContainer {
+    padding-left: 0px;
+    background-color: #b7b7b7;
+
+    .home {
+      height: 91vh;
+    }
+
+    .Info {
+      width: 100%;
+      .InfoContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .team {
+      .teamContainer {
+        width: 100%;
+      }
+    }
+  }
+}
+
