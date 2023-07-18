@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Members from './pages/Members';
-import Layout from './components/Layout';
-import ContactUs from './pages/ContactUs';
 import { UserContextProvider } from './context/UserContext';
 import { ThemeContext } from './context/theme-context';
+import Home from './pages/Home';
+import Layout from './components/Layout';
+import Portfilo from './pages/Portfilo';
+import ContactUs from './pages/ContactUs';
+import Members from './pages/Members';
 import LoginPage from './pages/LoginPage';
-import CreatePost from './pages/CreatePost';
 import PostPage from './pages/PostPage';
 import EditPost from './pages/EditPost';
-import Blogs from './pages/Blogs';
+import CreatePost from './pages/CreatePost';
+import EducationHub from './pages/EducationHub';
 
 function App() {
 
@@ -26,7 +27,6 @@ function App() {
 
   const [theme, setTheme] = useState(getDefaultTheme());
 
-
   return (
     <Router>
       <UserContextProvider>
@@ -35,15 +35,16 @@ function App() {
             <Routes>
               <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/create" element={<CreatePost />} />
-                <Route path="/post/:id" element={<PostPage />} />
-                <Route path="/edit/:id" element={<EditPost />} />
-                <Route path='/members' element={<Members />} />
+                <Route path='/portfilo' element={<Portfilo />} />
                 <Route path='/contact' element={<ContactUs />} />
-                <Route path='/portfilo' element={<Blogs />} />
+                <Route path='/members' element={<Members />} />
+                <Route path='/eduhub' element={<EducationHub />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='post/:id' element={<PostPage />} />
+                <Route path='/edit/:id' element={<EditPost />} />
+                <Route path='/create' element={<CreatePost />} />
               </Route>
-            </Routes>            
+            </Routes>
           </div>
         </ThemeContext.Provider>
       </UserContextProvider>

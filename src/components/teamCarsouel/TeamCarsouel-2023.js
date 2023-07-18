@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import noProfileImg from '../../assets/noProfileImg.png';
 import Bander from '../../assets/BanderAlRasheed.jpg';
 import Abdullah from '../../assets/AbdulahAlShawi.jpg';
@@ -40,6 +42,16 @@ export default class TeamCarsouel2023 extends Component {
                           <h4>Bander AlRasheed</h4>
                         </div>
                         <div className="card_footer">
+                          <a
+                            href="https://www.linkedin.com/company/cyberops-at-psu/mycompany/"
+                            rel="noreferrer"
+                          >
+                            <FontAwesomeIcon
+                              icon={faLinkedin}
+                              size='2x'
+                              id="anchor-icon"
+                            />
+                          </a>
                           President
                         </div>
                       </div>
@@ -53,6 +65,16 @@ export default class TeamCarsouel2023 extends Component {
                           <h4>Abdulah AlShawi</h4>
                         </div>
                         <div className="card_footer">
+                          <a
+                            href="https://www.linkedin.com/company/cyberops-at-psu/mycompany/"
+                            rel="noreferrer"
+                          >
+                            <FontAwesomeIcon
+                              icon={faLinkedin}
+                              size='2x'
+                              id="anchor-icon"
+                            />
+                          </a>
                           Vice-President
                         </div>
                       </div>
@@ -66,6 +88,16 @@ export default class TeamCarsouel2023 extends Component {
                           <h4>Ali AlHoban</h4>
                         </div>
                         <div className="card_footer">
+                          <a
+                            href="https://www.linkedin.com/company/cyberops-at-psu/mycompany/"
+                            rel="noreferrer"
+                          >
+                            <FontAwesomeIcon
+                              icon={faLinkedin}
+                              size='2x'
+                              id="anchor-icon"
+                            />
+                          </a>
                           Head of R&D
                         </div>
                       </div>
@@ -79,6 +111,16 @@ export default class TeamCarsouel2023 extends Component {
                           <h4>Saud AlOmran</h4>
                         </div>
                         <div className="card_footer">
+                          <a
+                            href="https://www.linkedin.com/company/cyberops-at-psu/mycompany/"
+                            rel="noreferrer"
+                          >
+                            <FontAwesomeIcon
+                              icon={faLinkedin}
+                              size='2x'
+                              id="anchor-icon"
+                            />
+                          </a>
                           Head of Marketing
                         </div>
                       </div>

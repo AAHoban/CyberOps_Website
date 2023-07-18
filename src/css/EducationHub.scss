@@ -1,0 +1,19 @@
+@import './theme-variables.scss';
+
+.eduhubContainer {
+    padding: 60px 120px;
+    @include themify($themes) {
+        background-color: themed('bodyBackgroundColor');
+        color: themed('textColor');
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .eduhubContainer {
+        padding: 60px;
+    }
+}

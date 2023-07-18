@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const User = require('./models/User');
 const Post = require('./models/Post');
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+const OAuth2 = google.auth.OAuth2;
 const app = express();
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
@@ -19,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect('mongodb+srv://CyberOpsAdmin:alihohobaba@blogcluster.ry2fqqf.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://Hoban:alihohobaba@cluster1.1fxt4kg.mongodb.net/');
 
 app.post('/register', async (req,res) => {
   const {username,password} = req.body;
@@ -61,7 +64,7 @@ app.get('/profile', (req,res) => {
   });
 });
 
-app.post('/logout', (req,res) => {
+app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok');
 });
 
@@ -107,7 +110,7 @@ app.put('/post',uploadMiddleware.single('file'), async (req,res) => {
     if (!isAuthor) {
       return res.status(400).json('you are not the author');
     }
-    await postDoc.update({
+    await postDoc.updateOne({
       title,
       summary,
       content,
@@ -132,7 +135,8 @@ app.get('/post/:id', async (req, res) => {
   const {id} = req.params;
   const postDoc = await Post.findById(id).populate('author', ['username']);
   res.json(postDoc);
-})
+});
 
-app.listen(3500);
-//
+app.listen(3500 , () => {
+  console.log('Server working on 3500');
+});

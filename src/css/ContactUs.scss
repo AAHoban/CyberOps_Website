@@ -1,0 +1,85 @@
+@import './theme-variables.scss';
+
+.contactContainer {
+  @include themify($themes) {
+    background-color: themed('bodyBackgroundColor');
+    color: themed('textColor');
+  }
+  h1 {
+    padding: 60px 120px;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contactContainer {
+    h1 {
+      padding: 60px;
+      font-size: 3rem;
+    }
+  }
+}
+
+form {
+  max-width: 900px;
+  width: 85%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  @include themify($themes) {
+    background-color: themed('toggleBackground');
+    color: themed('textColor');
+  }
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.name-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 1.2rem;
+}
+
+button[type="submit"] {
+  @include themify($themes) {
+    background-color: themed('buttonColor');
+  }
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  max-width: 200px;
+  transition: all ease 0.3s;
+}
+
+button[type="submit"]:hover {
+  border-radius: 25px;
+  transition: all ease 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+  .form-group {
+      width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+        <div className='ul-div'>
+          <ol>
+            <a href='/'>
+              <FontAwesomeIcon className='menuIcons' icon={faHome} />
+            </a>
+          </ol>
+          <ol>
+            <a href='/portfilo'>
+              <FontAwesomeIcon className='menuIcons' icon={faSuitcase} />
+            </a>
+          </ol>
+          <ol>
+            <a href='/contact'>
+              <FontAwesomeIcon className='menuIcons' icon={faEnvelope} />
+            </a>
+          </ol>
+        </div>
+
+
+
+        <NavLink 
+          exact="true"
+          activeclassname="active"
+          to="/"
+          onClick={() => setShowNav(false)}>
+          <FontAwesomeIcon className='menuIcons' icon={faHome} />
+        </NavLink>
+        <NavLink
+          activeclassname="active"
+          className="portfolio-link"
+          to="/portfilo"
+          onClick={() => setShowNav(false)}
+        >
+          <FontAwesomeIcon className='menuIcons' icon={faSuitcase} />
+        </NavLink>
+        <NavLink
+          activeclassname="active"
+          className="contact-link"
+          to="/contact"
+          onClick={() => setShowNav(false)}
+        >
+          <FontAwesomeIcon className='menuIcons' icon={faEnvelope} />
+        </NavLink>

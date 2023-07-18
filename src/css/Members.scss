@@ -1,0 +1,41 @@
+@import './theme-variables.scss';
+
+.memberContainer {
+  @include themify($themes) {
+      background-color: themed('bodyBackgroundColor');
+      color: themed('textColor');
+  }
+  .memberCount {
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    h2 {
+      font-size: 55px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .memberContainer {
+    h2 {
+      font-size: 2rem;
+    }
+    h1 {
+      padding: 60px;
+      font-size: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .memberContainer {
+    .memberCount{
+      h2 {
+        font-size: 42px;
+      }
+    }
+  }
+}

@@ -16,6 +16,9 @@ import {
   faClose,
   faPlus,
   faRightFromBracket,
+  faMoon,
+  faSun,
+  faBuildingColumns
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
@@ -26,7 +29,7 @@ const Sidebar = () => {
   const {setUserInfo, userInfo} = useContext(UserContext);
   const {theme, setTheme} = useContext(ThemeContext);
 
-  const handleThemeChange = () => {
+  const handleThemeChange = (themeIcon) => {
     const isCurrentDark = theme === 'dark';
     setTheme(isCurrentDark ? 'light' : 'dark');
     localStorage.setItem('default-theme', isCurrentDark ? 'light' : 'dark');
@@ -50,7 +53,7 @@ const Sidebar = () => {
     setUserInfo(null);
   }
 
-const username = userInfo?.username;
+  const username = userInfo?.username;
 
   return (
     <div className="nav-bar">
@@ -61,49 +64,35 @@ const username = userInfo?.username;
         <img src={CyberOpsLogo} alt="Logo" />
       </Link>
       <nav className={showNav ? 'mobile-show' : ''}>
-        <NavLink 
-          exact="true"
-          activeclassname="active"
-          to="/"
-          onClick={() => setShowNav(false)}>
-          <FontAwesomeIcon className='menuIcons' icon={faHome} />
-        </NavLink>
-        <NavLink
-          activeclassname="active"
-          className="portfolio-link"
-          to="/portfilo"
-          onClick={() => setShowNav(false)}
-        >
-          <FontAwesomeIcon className='menuIcons' icon={faSuitcase} />
-        </NavLink>
-        <NavLink
-          activeclassname="active"
-          className="contact-link"
-          to="/contact"
-          onClick={() => setShowNav(false)}
-        >
-          <FontAwesomeIcon className='menuIcons' icon={faEnvelope} />
-        </NavLink>
+        <div className='ul-div'>
+          <ol>
+            <a href='/'>
+              <FontAwesomeIcon className='menuIcons' icon={faHome} />
+            </a>
+          </ol>
+          <ol>
+            <a href='/portfilo' className='portfolio-link'>
+              <FontAwesomeIcon className='menuIcons' icon={faSuitcase} />
+            </a>
+          </ol>
+          <ol>
+            <a href='/contact' className='contact-link'>
+              <FontAwesomeIcon className='menuIcons' icon={faEnvelope} />
+            </a>
+          </ol>
+          <ol>
+            <a href='/eduhub' className='EducationHub-link'>
+              <FontAwesomeIcon className='menuIcons' icon={faBuildingColumns} />
+            </a>
+          </ol>
+        </div>
         <div className="toggle-btn-section">
           <div className={`toggle-checkbox m-vertical-auto`}>
-            <input
-              className="toggle-btn__input"
-              type="checkbox"
-              name="checkbox"
-              onChange={handleThemeChange}
-              checked={theme === 'light'}
-            />
-            <button type="button" className={`toggle-btn__input-label`} onClick={handleThemeChange}></button>
+            <button type="button" className={`toggle-btn__input-label lightDark-toggle`} onClick={handleThemeChange}>
+              <FontAwesomeIcon className='menuIcons' icon={theme === 'dark' ? faMoon : faSun} size='2x'/>
+            </button>
           </div>
         </div>
-
-        <FontAwesomeIcon 
-          onClick={() => setShowNav(false)}
-          icon={faClose}
-          color="#ffffff"
-          size="2x"
-          className='close-icon' />
-
         {username && (
           <>
             <NavLink 
@@ -126,6 +115,13 @@ const username = userInfo?.username;
           <>
           </>
         )}
+
+        <FontAwesomeIcon 
+          onClick={() => setShowNav(false)}
+          icon={faClose}
+          color="#ffffff"
+          size='2x'
+          className='close-icon' />
       </nav>
       <ul>
         <li>
@@ -162,6 +158,13 @@ const username = userInfo?.username;
           </a>
         </li>
       </ul>
+      <div className="toggle-btn-section-mobile">
+      <div className={`toggle-checkbox m-vertical-auto`}>
+            <button type="button" className={`toggle-btn__input-label`} onClick={handleThemeChange}>
+              <FontAwesomeIcon className='menuIcons' icon={theme === 'dark' ? faMoon : faSun} size='2x'/>
+            </button>
+          </div>
+      </div>
       <FontAwesomeIcon 
           onClick={() => setShowNav(true)}
           icon={faBars}

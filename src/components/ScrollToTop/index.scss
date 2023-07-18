@@ -1,0 +1,17 @@
+@import '../../css/theme-variables.scss';
+
+.scrollUpButton {
+    position: fixed; 
+    bottom: 40px;
+    right: 1.5%;
+    height: 20px;
+    font-size: 2.5rem;
+    z-index: 1;
+    cursor: pointer;
+    @include themify($themes) {
+        color: themed('textColor');
+    }
+    background-color: transparent;
+    border: none;
+    opacity: 0.9;
+}

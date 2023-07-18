@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Navigate, useParams} from "react-router-dom";
 import Editor from "../Editor";
+import '../App.scss';
 
 export default function EditPost() {
   const {id} = useParams();
@@ -47,7 +48,7 @@ export default function EditPost() {
 
   return (
     <div className='editPostContainer'>
-      <h1 className='portfiloHeading'>Edit Post</h1>
+      <h1 className="editHeading">Edit Post</h1>
       <form className="editPost" onSubmit={updatePost}>
         <input type="title"
               placeholder={'Title'}

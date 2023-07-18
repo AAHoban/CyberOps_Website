@@ -59,53 +59,18 @@
 
         .toggle-btn__input-label {
           cursor: pointer;
-          text-indent: -9999px;
-          width: 46px;
-          height: 20px;
-          display: block;
-          border-radius: 23px;
           position: relative;
           border: none;
-          margin-top: 2px;
+          margin-top: 8px;
+          background-color: transparent;
 
-          @include themify($themes) {
-            background-color: themed('toggleBackground');
+          .menuIcons {
+            margin-top: -3px;
           }
 
           &::after {
-            content: '?';
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            transition: 0.3s;
-            box-shadow: 0 5px 10px rgba(153, 153, 153, 0.4);
-            background-color: #fff;
           }
         }
-
-        .toggle-btn__input:checked ~ .toggle-btn__input-label {
-          &:after {
-            background: #fff;
-            left: calc(100% - 3px);
-            transform: translateX(-100%);
-          }
-        }
-
-        .toggle-btn__input:checked ~ .toggle-btn__theme {
-          &:after {
-            // theme switch circle background in light theme
-            background: #fff;
-            left: calc(100% - 3px);
-            transform: translateX(-100%);
-          }
-        }
-      }
-
-      .toggle-btn__input:checked ~ .toggle-btn__input-label {
-        background-color: #17609c;
       }
     }
 
@@ -125,7 +90,9 @@
       }
 
       &:hover {
-        color: #17609c;
+        @include themify($themes) {
+          color: themed('buttonColor');
+        }
 
         svg {
           opacity: 0;
@@ -175,6 +142,13 @@
         content: 'PORTFOLIO';
       }
     }
+    
+    a.EducationHub-link {
+      &:after {
+        content: 'EDUHUB';
+      }
+    }
+
     a.createBlog-link {
       &:after {
         content: 'NEW BLOG';
@@ -242,7 +216,7 @@
 }
 .switch-toggle input:checked + div {
 	left: 50%;
-	background-color: #17609c;
+	background-color: #ffffff;
 }
 .switch-toggle.outer div {
 	width: 26px;
@@ -252,12 +226,15 @@
 	
 }
 
-.hamburger-icon, .close-icon {
+.hamburger-icon, .close-icon, .toggle-btn-section-mobile {
   display: none;
 }
 
 
 @media screen and (max-width: 1200px) {
+  .toggle-btn-section {
+    display: none;
+  }
   .nav-bar { 
     width: 100%;
     position: initial;
@@ -268,7 +245,7 @@
     }
 
     .logo {
-      width: 10%;
+      width: 15%;
       display: block;
       padding: 8px 0;
 
@@ -319,7 +296,7 @@
         opacity: 1;
         position: initial;
         width: auto;
-        margin-left: 10PX;
+        margin-left: 10px;
       }
       a.about-link {
         &:after {
@@ -341,6 +318,14 @@
           font-size: 26px;
         }
       }
+
+      a.EducationHub-link {
+        &:after {
+          content: 'EDUCATION HUB';
+          font-size: 26px;
+        }
+      }
+
       a.createBlog-link {
         &:after {
           content: 'NEW BLOG';
@@ -364,6 +349,40 @@
         opacity: 1 !important;
       }
      }
+
+     .toggle-btn-section-mobile {
+      margin: auto 0 auto auto;
+      display: flex;
+      position: absolute;
+      top: 28px;
+      right: 90px;
+      .toggle-checkbox {
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+
+        .toggle-btn__input {
+          height: 0;
+          width: 0;
+          visibility: hidden;
+        }
+
+        .toggle-btn__input-label {
+          cursor: pointer;
+          position: relative;
+          border: none;
+          margin-top: -7px;
+          background-color: transparent;
+
+          .menuIcons {
+            @include themify($themes) {
+              color: themed('textColor');
+            }
+          }
+        }
+      }
+    }
 
      .hamburger-icon,
      .close-icon {

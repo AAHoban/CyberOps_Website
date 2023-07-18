@@ -1,15 +1,21 @@
 $themes: (
   light: (
-    bodyBackgroundColor: #f8f8fa,
+    bodyBackgroundColor: #efefef,
     headerFooterBackground: #fff,
+    buttonColor: #06122c,
     textColor: #000,
+    invertTextColor: #fff,
     toggleBackground: #dfe4ea,
+    homePageBackground: #209eac
   ),
   dark: (
     bodyBackgroundColor: #222736,
     headerFooterBackground: #36394c,
+    buttonColor: #209eac,
     textColor: #eff2f7,
+    invertTextColor: #000,
     toggleBackground: #606071,
+    homePageBackground: #06122c
   ),
 );
 

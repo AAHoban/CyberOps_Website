@@ -1,5 +1,6 @@
 import ReactQuill from "react-quill";
 import React from "react";
+import './App.scss';
 
 export default function Editor({value,onChange}) {
   const modules = {

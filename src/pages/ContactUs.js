@@ -1,28 +1,111 @@
-import React from 'react';
-import '../css/ContactUs.css';
-import { FaTwitter } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
+import React, { useState, useRef } from 'react';
+import '../css/ContactUs.scss';
+import FAQ from '../components/FAQ';
+import Footer from '../components/Footer';
+import emailjs from '@emailjs/browser';
 
 function ContactUs() {
-  return (  
-    <>
-      <div className='contactContainer'>
-        <div className="header">
-          <h1>Contact Us</h1> 
-        </div> 
-        <div className='mainPage'>
-  <h2>Socials</h2>
-          <div className='socials'>
-            <a href='https://twitter.com/CyberOps_PSU' ><FaTwitter className='socialIcons' id='Twitter'/></a>
-            <a href='https://www.linkedin.com/company/cyberops-at-psu/' ><FaLinkedin className='socialIcons' id='LinkedIn'/></a>
-          </div>
-  <h2>Our Location</h2>
+
+  const form = useRef();
+  const [faqs, setFaqs] = useState([
+    {
+      question: "How many programmers does it take to screw a lightbulb?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra lorem eu dolor rhoncus, at scelerisque ligula gravida. Sed porta id mi sit amet convallis. Etiam iaculis massa sit amet lacus blandit sodales. Nulla ultrices velit a diam placerat congue. Pellentesque iaculis, ipsum quis eleifend dapibus, est dui eleifend ante, quis fermentum mi ligula quis nisl. Ut et ex dui. Integer id venenatis quam.",
+      open: false
+    },
+    {
+      question: "Who is the most awesome person?",
+      answer: "You! The viewer!",
+      open: false
+    },
+    {
+      question:
+        "How many questions does it take to make a successful FAQ Page?",
+      answer: "This many!",
+      open: false
+    }
+  ]);
+
+  const toggleFAQ = (index) => {
+    setFaqs(
+      faqs.map((faq, i) => {
+        if (i === index) {
+          faq.open = !faq.open;
+        } else {
+          faq.open = false;
+        }
+
+        return faq;
+      })
+    );
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_hrodrhq', 'template_6vdv0kw', form.current, 'cNv-OZtQFAGuCSHSS')
+      .then((result) => {
+          console.log(result.text);
+          console.log("message sent");
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+  return (
+    <div className="contactContainer" id="top">
+      <h1>Contact Us</h1>
+      <form ref={form} onSubmit={sendEmail}>
+        <div className="name-group">
           <div>
+            <label>First Name:</label>
+            <input
+              type="text"
+              id="user_fname"
+              name="user_fname"
+              required
+            />
+          </div>
+          <div>
+            <label>Last Name:</label>
+            <input
+              type="text"
+              id="user_lname"
+              name="user_lname"
+              required
+            />
           </div>
         </div>
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+              type="text"
+              id="user_email"
+              name="user_email"
+              required
+            />
+        </div>
+        <div className="form-group">
+          <label>Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div className="faqs">
+        <h1>FAQ</h1>
+        {faqs.map((faq, index) => (
+          <FAQ faq={faq} index={index} key={index} toggleFAQ={toggleFAQ} />
+        ))}
       </div>
-    </>    
-  )
+      <Footer />
+    </div>
+  );
 }
 
 export default ContactUs;
