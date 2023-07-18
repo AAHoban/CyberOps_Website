@@ -35,15 +35,31 @@ function App() {
             <Routes>
               <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path='/portfilo' element={<Portfilo />} />
-                <Route path='/contact' element={<ContactUs />} />
-                <Route path='/members' element={<Members />} />
-                <Route path='/eduhub' element={<EducationHub />} />
-                <Route path='/login' element={<LoginPage />} />
-                <Route path='post/:id' element={<PostPage />} />
-                <Route path='/edit/:id' element={<EditPost />} />
-                <Route path='/create' element={<CreatePost />} />
               </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='/portfilo' element={<Portfilo />} />
+              </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='/contact' element={<ContactUs />} />
+              </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='/members' element={<Members />} />
+              </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='/eduhub' element={<EducationHub />} />
+              </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='/login' element={<LoginPage />} />
+              </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='post/:id' element={<PostPage />} />
+              </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='/edit/:id' element={<EditPost />} />
+              </Route>
+              <Route path='/' element={<Layout />}>
+                <Route path='/create' element={<CreatePost />} />   
+              </Route>         
             </Routes>
           </div>
         </ThemeContext.Provider>
