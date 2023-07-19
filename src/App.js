@@ -36,28 +36,28 @@ function App() {
               <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
               </Route>
-              <Route path='/portfilo' element={<Layout />}>
+              <Route path='portfilo' element={<Layout />}>
                 <Route index element={<Portfilo />} />
               </Route>
-              <Route path='/contact' element={<Layout />}>
+              <Route path='contact' element={<Layout />}>
                 <Route index element={<ContactUs />} />
               </Route>
-              <Route path='/members' element={<Layout />}>
+              <Route path='members' element={<Layout />}>
                 <Route index element={<Members />} />
               </Route>
-              <Route path='/eduhub' element={<Layout />}>
+              <Route path='eduhub' element={<Layout />}>
                 <Route index element={<EducationHub />} />
               </Route>
-              <Route path='/login' element={<Layout />}>
+              <Route path='login' element={<Layout />}>
                 <Route index element={<LoginPage />} />
               </Route>
-              <Route path='/post:id' element={<Layout />}>
+              <Route path='post:id' element={<Layout />}>
                 <Route index element={<PostPage />} />
               </Route>
-              <Route path='/edit:id' element={<Layout />}>
+              <Route path='edit:id' element={<Layout />}>
                 <Route index element={<EditPost />} />
               </Route>
-              <Route path='/create' element={<Layout />}>
+              <Route path='create' element={<Layout />}>
                 <Route index element={<CreatePost />} />   
               </Route>         
             </Routes>
