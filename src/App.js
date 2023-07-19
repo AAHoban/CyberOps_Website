@@ -35,30 +35,14 @@ function App() {
             <Routes>
               <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
-              </Route>
-              <Route path='portfilo' element={<Layout />}>
-                <Route index element={<Portfilo />} />
-              </Route>
-              <Route path='contact' element={<Layout />}>
-                <Route index element={<ContactUs />} />
-              </Route>
-              <Route path='members' element={<Layout />}>
-                <Route index element={<Members />} />
-              </Route>
-              <Route path='eduhub' element={<Layout />}>
-                <Route index element={<EducationHub />} />
-              </Route>
-              <Route path='login' element={<Layout />}>
-                <Route index element={<LoginPage />} />
-              </Route>
-              <Route path='post:id' element={<Layout />}>
-                <Route index element={<PostPage />} />
-              </Route>
-              <Route path='edit:id' element={<Layout />}>
-                <Route index element={<EditPost />} />
-              </Route>
-              <Route path='create' element={<Layout />}>
-                <Route index element={<CreatePost />} />   
+                <Route path='portfilo' element={<Portfilo />} />
+                <Route path='contact' element={<ContactUs />} />
+                <Route path='members' element={<Members />} />
+                <Route path='eduhub' element={<EducationHub />} />
+                <Route path='login' element={<LoginPage />} />
+                <Route path='post:id' element={<PostPage />} />
+                <Route path='edit:id' element={<EditPost />} />
+                <Route path='create' element={<CreatePost />} />   
               </Route>         
             </Routes>
           </div>
