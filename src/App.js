@@ -40,8 +40,8 @@ function App() {
                 <Route path='members' element={<Members />} />
                 <Route path='eduhub' element={<EducationHub />} />
                 <Route path='login' element={<LoginPage />} />
-                <Route path='post:id' element={<PostPage />} />
-                <Route path='edit:id' element={<EditPost />} />
+                <Route path='post/:id' element={<PostPage />} />
+                <Route path='edit/:id' element={<EditPost />} />
                 <Route path='create' element={<CreatePost />} />   
               </Route>         
             </Routes>
