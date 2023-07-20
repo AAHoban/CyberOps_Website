@@ -11,7 +11,7 @@ export default function Post({_id, title, summary, cover, createdAt, author}) {
         <div className="image">
           <Link to={`/post/${_id}`}>
               <img 
-                src={'http://localhost:3500/'+cover} 
+                src={'https://cyberops-website-api.onrender.com/'+cover} 
                 alt=""
               />
           </Link>
