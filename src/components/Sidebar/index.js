@@ -36,7 +36,7 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:3500/profile', {
+    fetch('https://cyberops-website-api.onrender.com/profile', {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -46,7 +46,7 @@ const Sidebar = () => {
   }, []);
 
   function logout() {
-    fetch('http://localhost:3500/logout', {
+    fetch('https://cyberops-website-api.onrender.com/logout', {
       credentials: 'include',
       method: 'POST',
     });
