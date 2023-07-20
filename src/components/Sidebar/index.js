@@ -1,6 +1,7 @@
 import './index.scss';
 import React, { useState, useEffect, useContext } from 'react';
 import CyberOpsLogo from '../../assets/CYBER_OPS_Transparent.png';
+import CyberOpsDarkLogo from '../../assets/CYBER_OPS_TransparentDark.png';
 import { ThemeContext } from '../../context/theme-context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -61,7 +62,7 @@ const Sidebar = () => {
         className="logo"
         to="/"
         onClick={() => setShowNav(false)}>
-        <img src={CyberOpsLogo} alt="Logo" />
+        <img src={theme === 'dark' ? CyberOpsDarkLogo : CyberOpsLogo} alt="Logo" />
       </Link>
       <nav className={showNav ? 'mobile-show' : ''}>
         <div className='ul-div'>
