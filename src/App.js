@@ -35,7 +35,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path='portfilo' element={<Portfilo />} />
+                <Route path='/portfilo' element={<Portfilo />} />
                 <Route path='contact' element={<ContactUs />} />
                 <Route path='members' element={<Members />} />
                 <Route path='eduhub' element={<EducationHub />} />
