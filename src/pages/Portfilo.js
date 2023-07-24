@@ -10,8 +10,7 @@ const Portfilo = () => {
   useEffect(() => {
     setIsLoading(true); // Set loading state to true before making the request
     fetch('https://cyberops-website-api.onrender.com/post', {
-      method: 'POST',
-      body: data,
+      method: 'GET',
       credentials: 'include',
     }).then(response => {
       response.json().then(posts => {

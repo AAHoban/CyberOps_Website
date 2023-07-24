@@ -11,8 +11,6 @@ export default function PostPage() {
   const {id} = useParams();
   useEffect(() => {
     fetch(`https://cyberops-website-api.onrender.com/post/${id}`, {
-      method: 'POST',
-      body: data,
       credentials: 'include',
     })
       .then(response => {
