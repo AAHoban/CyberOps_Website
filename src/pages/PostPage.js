@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {formatISO9075} from "date-fns";
-import {UserContext} from "../App";
+import {UserContext} from "../context/UserContext";
 import {Link} from 'react-router-dom';
 import '../App.scss';
 

@@ -1,6 +1,7 @@
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { UserContextProvider } from './context/UserContext';
 import { ThemeContext } from './context/theme-context';
 import Home from './pages/Home';
 import Layout from './components/Layout';
@@ -15,8 +16,6 @@ import EducationHub from './pages/EducationHub';
 
 function App() {
 
-  const UserContext = createContext({});
-
   const isBrowserDefaulDark = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -27,11 +26,10 @@ function App() {
   };
 
   const [theme, setTheme] = useState(getDefaultTheme());
-  const [userInfo, setUserInfo] = useState({});
 
   return (
     <Router>
-      <UserContext.Provider value={{ userInfo, setUserInfo }}>
+      <UserContextProvider>
         <ThemeContext.Provider value={{ theme, setTheme }}>
           <div className={`theme-${theme}`}>
             <Routes>
@@ -49,7 +47,7 @@ function App() {
             </Routes>
           </div>
         </ThemeContext.Provider>
-      </UserContext.Provider>
+      </UserContextProvider>
     </Router>
   );
 }
