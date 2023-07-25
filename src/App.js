@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { UserContextProvider } from './context/UserContext';
 import { ThemeContext } from './context/theme-context';
 import Home from './pages/Home';
 import Layout from './components/Layout';
@@ -26,10 +25,11 @@ function App() {
   };
 
   const [theme, setTheme] = useState(getDefaultTheme());
+  const [userInfo, setUserInfo] = useState({});
 
   return (
     <Router>
-      <UserContextProvider>
+      <UserContext.Provider value={{ userInfo, setUserInfo }}>
         <ThemeContext.Provider value={{ theme, setTheme }}>
           <div className={`theme-${theme}`}>
             <Routes>
@@ -47,7 +47,7 @@ function App() {
             </Routes>
           </div>
         </ThemeContext.Provider>
-      </UserContextProvider>
+      </UserContext.Provider>
     </Router>
   );
 }
