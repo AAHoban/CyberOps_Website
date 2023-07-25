@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeContext } from './context/theme-context';
@@ -14,6 +14,8 @@ import CreatePost from './pages/CreatePost';
 import EducationHub from './pages/EducationHub';
 
 function App() {
+
+  const UserContext = createContext({});
 
   const isBrowserDefaulDark = () =>
   window.matchMedia("(prefers-color-scheme: dark)").matches;
