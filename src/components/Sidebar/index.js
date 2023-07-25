@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import CyberOpsLogo from '../../assets/CYBER_OPS_Transparent.png';
 import CyberOpsDarkLogo from '../../assets/CYBER_OPS_TransparentDark.png';
 import { ThemeContext } from '../../context/theme-context';
+import { UserContext } from '../../App';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
@@ -22,7 +23,6 @@ import {
   faBuildingColumns
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
-import { UserContext } from '../../App';
 
 
 const Sidebar = () => {
