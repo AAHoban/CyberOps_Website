@@ -22,7 +22,7 @@ import {
   faBuildingColumns
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
-import { UserContext } from '../../context/UserContext';
+import { UserContext } from '../../App';
 
 
 const Sidebar = () => {
