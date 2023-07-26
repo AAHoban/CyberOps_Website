@@ -37,6 +37,8 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
+    console.log("Token:", document.cookie);
+
     fetch('https://cyberops-website-api.onrender.com/profile', {
       credentials: 'include',
     })
