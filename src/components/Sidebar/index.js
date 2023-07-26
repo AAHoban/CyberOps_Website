@@ -39,12 +39,23 @@ const Sidebar = () => {
   useEffect(() => {
     fetch('https://cyberops-website-api.onrender.com/profile', {
       credentials: 'include',
-    }).then(response => {
-      response.json().then(userInfo => {
-        setUserInfo(userInfo);
-      });
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Unauthorized: User not logged in");
+      }
+      return response.json();
+    })
+    .then(userInfo => {
+      setUserInfo(userInfo);
+    })
+    .catch(error => {
+      // Handle the error, e.g., clear user info and token:
+      setUserInfo(null);
+      // You might also want to handle other errors differently
     });
   }, []);
+  
 
   function logout() {
     fetch('https://cyberops-website-api.onrender.com/logout', {
