@@ -40,21 +40,27 @@ const Sidebar = () => {
     fetch('https://cyberops-website-api.onrender.com/profile', {
       credentials: 'include',
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Unauthorized: User not logged in");
-      }
-      return response.json();
-    })
-    .then(userInfo => {
-      setUserInfo(userInfo);
-    })
-    .catch(error => {
-      // Handle the error, e.g., clear user info and token:
-      setUserInfo(null);
-      // You might also want to handle other errors differently
-    });
+      .then(response => {
+        if (!response.ok) {
+          // Check for 401 Unauthorized
+          if (response.status === 401) {
+            // Clear user info and token as the user is not authenticated
+            setUserInfo(null);
+            return;
+          }
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(userInfo => {
+        setUserInfo(userInfo);
+      })
+      .catch(error => {
+        // Handle other errors, e.g., network issues
+        console.error('Error fetching profile:', error);
+      });
   }, []);
+  
   
 
   function logout() {
