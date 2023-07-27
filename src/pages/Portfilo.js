@@ -9,10 +9,7 @@ const Portfilo = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     setIsLoading(true); // Set loading state to true before making the request
-    fetch('https://cyberops-website-api.onrender.com/post', {
-      method: 'GET',
-      credentials: 'include',
-    }).then(response => {
+    fetch('https://cyberops-website-api.onrender.com/post').then(response => {
       response.json().then(posts => {
         setPosts(posts);
         setIsLoading(false); // Set loading state to false after data is fetched

@@ -37,33 +37,14 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    console.log("Token:", document.cookie);
-
-    fetch('https://cyberops-website-api.onrender.com/profile', {
+    fetch('http://localhost:3500/profile', {
       credentials: 'include',
-    })
-      .then(response => {
-        if (!response.ok) {
-          // Check for 401 Unauthorized
-          if (response.status === 401) {
-            // Clear user info and token as the user is not authenticated
-            setUserInfo(null);
-            return;
-          }
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(userInfo => {
+    }).then(response => {
+      response.json().then(userInfo => {
         setUserInfo(userInfo);
-      })
-      .catch(error => {
-        // Handle other errors, e.g., network issues
-        console.error('Error fetching profile:', error);
       });
+    });
   }, []);
-  
-  
 
   function logout() {
     fetch('https://cyberops-website-api.onrender.com/logout', {

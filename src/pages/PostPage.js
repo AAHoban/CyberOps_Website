@@ -6,13 +6,11 @@ import {Link} from 'react-router-dom';
 import '../App.scss';
 
 export default function PostPage() {
-  const [postInfo,setPostInfo] = useState(null);
+  const [postInfo, setPostInfo] = useState(null);
   const {userInfo} = useContext(UserContext);
   const {id} = useParams();
   useEffect(() => {
-    fetch(`https://cyberops-website-api.onrender.com/post/${id}`, {
-      credentials: 'include',
-    })
+    fetch(`https://cyberops-website-api.onrender.com/post/${id}`)
       .then(response => {
         response.json().then(postInfo => {
           setPostInfo(postInfo);
