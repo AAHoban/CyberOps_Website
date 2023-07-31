@@ -27,7 +27,7 @@ import { UserContext } from '../../context/UserContext';
 
 const Sidebar = () => {
   const [showNav, setShowNav] = useState(false);
-  const {userInfo, setUserInfo} = useContext(UserContext);
+  const {setUserInfo, userInfo} = useContext(UserContext);
   const {theme, setTheme} = useContext(ThemeContext);
 
   const handleThemeChange = (themeIcon) => {
@@ -39,26 +39,10 @@ const Sidebar = () => {
   useEffect(() => {
     fetch('http://localhost:3500/profile', {
       credentials: 'include',
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        // Handle error here (401 Unauthorized or 400 Bad Request)
-        // For example, log the error or update state to indicate login failure
-        console.error('Error fetching profile:', response.status);
-        setUserInfo(null); // Assuming setUserInfo is a function to update the user state
-      }
-    })
-    .then(userInfo => {
-      setUserInfo(userInfo);
-    })
-    .catch(error => {
-      console.error('Error fetching profile:', error);
-      setUserInfo(null); // Assuming setUserInfo is a function to update the user state
+    }).then(response => {
+      response.json().then(userInfo => {
+        setUserInfo(userInfo);
+      });
     });
   }, []);
 
