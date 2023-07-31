@@ -37,7 +37,7 @@ const Sidebar = () => {
   };
 
   useEffect(() => {
-    fetch('https://cyberops-website-api.onrender.com/profile', {
+    fetch('http://localhost:3500/profile', {
       credentials: 'include',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
