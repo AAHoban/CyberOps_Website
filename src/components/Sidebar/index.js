@@ -44,7 +44,7 @@ const Sidebar = () => {
         setUserInfo(userInfo);
       });
     });
-  });
+  }, []);
 
   function logout() {
     fetch('https://cyberops-website-api.onrender.com/logout', {
