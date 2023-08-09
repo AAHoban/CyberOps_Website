@@ -41,6 +41,7 @@
       @include themify($themes) {
         color: themed('textColor');
       }
+      background-color: transparent;
     }
 
     .toggle-btn-section {
