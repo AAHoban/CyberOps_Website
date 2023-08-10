@@ -380,6 +380,9 @@
             @include themify($themes) {
               color: themed('textColor');
             }
+            background-color: transparent;
+            position: relative;
+            bottom: 10px;
           }
         }
       }
