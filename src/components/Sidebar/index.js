@@ -70,7 +70,7 @@ const Sidebar = (props) => {
             </a>
           </ol>
           <ol>
-            <a href='/portfilo' className='portfolio-link'>
+            <a href='/portfolio' className='portfolio-link'>
               <FontAwesomeIcon className='menuIcons' icon={faSuitcase} />
             </a>
           </ol>

@@ -5,7 +5,7 @@ import { UserContextProvider } from './context/UserContext';
 import { ThemeContext } from './context/theme-context';
 import Home from './pages/Home';
 import Layout from './components/Layout';
-import Portfilo from './pages/Portfilo';
+import Portfolio from './pages/Portfolio';
 import ContactUs from './pages/ContactUs';
 import Members from './pages/Members';
 import LoginPage from './pages/LoginPage';
@@ -35,7 +35,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path='/portfilo' element={<Portfilo />} />
+                <Route path='/portfolio' element={<Portfolio />} />
                 <Route path='contact' element={<ContactUs />} />
                 <Route path='members' element={<Members />} />
                 <Route path='eduhub' element={<EducationHub />} />

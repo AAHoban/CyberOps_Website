@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import Footer from '../components/Footer';
 import Post from '../Post';
 import '../App.scss';
 
-const Portfilo = () => {
+const Portfolio = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +23,7 @@ const Portfilo = () => {
   return (
       <>
         <div className='portfiloPage'>
-          <h1 className='portfiloHeading'>Portfilo</h1>
+          <h1 className='portfiloHeading'>Portfolio</h1>
           {isLoading ? (
             // Skeleton loading elements
             <div className="skeleton-loading">
@@ -67,8 +68,9 @@ const Portfilo = () => {
             </>
           )}
         </div>
+        <Footer />
       </>
   )
 }
 
-export default Portfilo;
+export default Portfolio;
