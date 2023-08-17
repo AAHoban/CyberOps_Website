@@ -18,7 +18,7 @@ export default function CreatePost() {
     data.set('content', content);
     data.set('file', files[0]);
     ev.preventDefault();
-    const response = await fetch('https://cyberops-website-api.onrender.com/post', {
+    const response = await fetch('https://backend-cyberops.onrender.com/post', {
       method: 'POST',
       body: data,
       credentials: 'include',
