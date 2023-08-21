@@ -15,16 +15,22 @@ export default function LoginPage() {
       body: JSON.stringify({username, password}),
       headers: {'Content-Type':'application/json'},
       credentials: 'include',
-    });
+    }).catch(error =>{
+      console.error('You fucked',error)
+    })
     if (response.ok) {
-      response.json().then(userInfo => {
+      try {
+        const userInfo = await response.json();
         setUserInfo(userInfo);
         setRedirect(true);
         console.log(username);
         console.log(password);
-      });
+      } catch (error) {
+        console.log('Error parsing response JSON:', error);
+        // Handle the error appropriately, e.g., show an error message to the user.
+      }
     } else {
-      alert('wrong credentials');
+      alert('Wrong credentials');
     }
   }
 
