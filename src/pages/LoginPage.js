@@ -42,10 +42,14 @@ export default function LoginPage() {
         <h1>Login</h1>
         <input type="text"
               placeholder="username"
+              id="username"
+              name="username"
               value={username}
               onChange={ev => setUsername(ev.target.value)}/>
         <input type="password"
               placeholder="password"
+              id="password"
+              name="password"
               value={password}
               onChange={ev => setPassword(ev.target.value)}/>
         <button>Login</button>
