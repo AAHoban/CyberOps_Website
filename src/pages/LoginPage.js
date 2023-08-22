@@ -16,7 +16,7 @@ export default function LoginPage() {
       headers: {'Content-Type':'application/json'},
       credentials: 'include',
     }).catch(error =>{
-      console.error('You fucked',error)
+      console.error('xxx', error)
     })
     if (response.ok) {
       try {
@@ -27,7 +27,6 @@ export default function LoginPage() {
         console.log(password);
       } catch (error) {
         console.log('Error parsing response JSON:', error);
-        // Handle the error appropriately, e.g., show an error message to the user.
       }
     } else {
       alert('Wrong credentials');
