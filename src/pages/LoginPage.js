@@ -16,7 +16,7 @@ export default function LoginPage() {
       headers: {'Content-Type':'application/json'},
       credentials: 'include',
     }).catch(error =>{
-      console.error('xxx', error)
+      console.error('error 405', error)
     })
     if (response.ok) {
       try {
@@ -38,7 +38,7 @@ export default function LoginPage() {
   }
   return (
     <section>
-      <form className="login" onSubmit={login}>
+      <form className="login" onSubmit={login} method="post">
         <h1>Login</h1>
         <input type="text"
               placeholder="username"
