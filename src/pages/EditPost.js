@@ -35,7 +35,6 @@ export default function EditPost() {
     const response = await fetch('https://backend-cyberops.onrender.com/post', {
       method: 'PUT',
       body: data,
-      credentials: 'include',
     });
     if (response.ok) {
       setRedirect(true);

@@ -36,7 +36,6 @@ const Sidebar = (props) => {
 
   useEffect(() => {
     fetch('https://backend-cyberops.onrender.com/profile', {
-      credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
         setUserInfo(userInfo);
@@ -46,7 +45,6 @@ const Sidebar = (props) => {
 
   function logout() {
     fetch('https://backend-cyberops.onrender.com/logout', {
-      credentials: 'include',
       method: 'POST',
     });
     setUserInfo(null);
