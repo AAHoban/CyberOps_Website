@@ -7,6 +7,9 @@ import emailjs from '@emailjs/browser';
 function ContactUs() {
 
   const form = useRef();
+  const [emailSent, setEmailSent] = useState(false);
+  const [submitDisabled, setSubmitDisabled] = useState(false);
+  const [hideSuccessMessage, setHideSuccessMessage] = useState(false);
   const [faqs, setFaqs] = useState([
     {
       question: "How many programmers does it take to screw a lightbulb?",
@@ -41,16 +44,37 @@ function ContactUs() {
     );
   };
 
+  const handleAnimationEnd = () => {
+    if(hideSuccessMessage) {
+      setEmailSent(false);
+    }
+  }
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (submitDisabled) {
+      return;
+    }
+    setSubmitDisabled(true);
 
     emailjs.sendForm('service_hrodrhq', 'template_6vdv0kw', form.current, 'cNv-OZtQFAGuCSHSS')
       .then((result) => {
           console.log(result.text);
           console.log("message sent");
-      }, (error) => {
-          console.log(error.text);
-      });
+          setEmailSent(true);
+          form.current.reset();
+
+          setTimeout(() => {
+            setHideSuccessMessage(true);
+          }, 3000);
+      })
+      .catch((error) => {
+        console.log(error.text);
+      })
+      .finally(() => {
+        setSubmitDisabled(false);
+      })
   };
 
   return (
@@ -95,8 +119,15 @@ function ContactUs() {
             required
           ></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">
+          {submitDisabled ? 'Sending...' : 'Submit'}
+        </button>
       </form>
+      {emailSent && <div className={`success-message ${emailSent && !hideSuccessMessage ? 'visible' : hideSuccessMessage ? 'hide' : ''}`}
+      onAnimationEnd={handleAnimationEnd}
+      >
+        Message has been sent!
+      </div>}
       <div className="faqs">
         <h1>FAQ</h1>
         {faqs.map((faq, index) => (

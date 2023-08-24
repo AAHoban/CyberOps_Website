@@ -5,6 +5,9 @@ const EducationHub = () => {
     return (
         <div className="eduhubContainer">
             <h1>Education Hub</h1>
+            <div>
+                
+            </div>
         </div>
     );
 }

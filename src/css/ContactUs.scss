@@ -78,6 +78,57 @@ button[type="submit"]:hover {
   transition: all ease 0.3s;
 }
 
+.success-message {
+  @include themify($themes) {
+    background-color: themed('bodyBackgroundColor');
+    color: themed('textColor');
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 20px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  max-width: 350px;
+  min-width: 280px;
+  animation: slide-down 0.5s forwards;
+}
+
+.success-message.hide {
+  animation: slide-up 0.5s forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .form-group {
       width: 100%;
