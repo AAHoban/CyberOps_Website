@@ -9,15 +9,15 @@ export default function Post({_id, title, summary, cover, createdAt, author}) {
     <div className="postContainer">
       <div className="post">
         <div className="image">
-          <Link to={`/api/post/${_id}`}>
+          <Link to={`/post/${_id}`}>
               <img 
-                src={'https://cyberops.onrender.com/api/'+cover} 
+                src={'https://cyberops.onrender.com/'+cover} 
                 alt=""
               />
           </Link>
         </div>
         <div className="texts">
-          <Link to={`/api/post/${_id}`}>
+          <Link to={`/post/${_id}`}>
             <h2>{title}</h2>
           </Link>
           <p className="info">
