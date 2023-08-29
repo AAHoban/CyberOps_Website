@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import noProfileImg from '../../assets/noProfileImg.png';
 import Bander from '../../assets/BanderAlRasheed.jpg';
 import Abdullah from '../../assets/AbdulahAlShawi.jpg';
 import Saud from '../../assets/SaudAlOmran.jpg';

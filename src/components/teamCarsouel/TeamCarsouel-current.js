@@ -6,7 +6,6 @@ import noProfileImg from '../../assets/noProfileImg.png';
 import Bander from '../../assets/BanderAlRasheed.jpg';
 import Abdullah from '../../assets/AbdulahAlShawi.jpg';
 import Saud from '../../assets/SaudAlOmran.jpg';
-import Ali from '../../assets/AliAlhoban.jpg';
 import './index.scss'
 
 export default class TeamCarsouel2023 extends Component {
