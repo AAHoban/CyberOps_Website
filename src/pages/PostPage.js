@@ -10,7 +10,7 @@ export default function PostPage() {
   const {userInfo} = useContext(UserContext);
   const {id} = useParams();
   useEffect(() => {
-    fetch(`https://cyberops.onrender.com/post/${id}`)
+    fetch(`https://cyberops.onrender.com/api/post/${id}`)
       .then(response => {
         response.json().then(postInfo => {
           setPostInfo(postInfo);
