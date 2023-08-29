@@ -36,7 +36,7 @@ export default function PostPage() {
         </div>
       )}
       <div className="image">
-        <img src={`https://cyberops.onrender.com/api/${postInfo.cover}`} alt="Post Thumbnail"/>
+        <img src={`https://cyberops.onrender.com/${postInfo.cover}`} alt="Post Thumbnail"/>
       </div>
       <div className="content" dangerouslySetInnerHTML={{__html:postInfo.content}} />
     </div>
