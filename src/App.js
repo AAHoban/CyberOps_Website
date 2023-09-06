@@ -12,7 +12,6 @@ import LoginPage from './pages/LoginPage';
 import PostPage from './pages/PostPage';
 import EditPost from './pages/EditPost';
 import CreatePost from './pages/CreatePost';
-import EducationHub from './pages/EducationHub';
 
 function App() {
 
@@ -38,7 +37,6 @@ function App() {
                 <Route path='/portfolio' element={<Portfolio />} />
                 <Route path='contact' element={<ContactUs />} />
                 <Route path='members' element={<Members />} />
-                <Route path='eduhub' element={<EducationHub />} />
                 <Route path='login' element={<LoginPage />} />
                 <Route path='post/:id' element={<PostPage />} />
                 <Route path='edit/:id' element={<EditPost />} />
