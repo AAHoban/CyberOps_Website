@@ -9,26 +9,26 @@ function Home() {
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    /*
-      const lastVisit = localStorage.getItem('lastVisit');
-
-      if (lastVisit) {
-        const currentTime = new Date().getTime();
-        const timeSinceLastVisit = currentTime - parseInt(lastVisit);
-    
-        const timeLimit = 1000; // 24 hours in milliseconds
-  
-        if (timeSinceLastVisit < timeLimit) {
-          setIsLoading(false); 
-        }
-      }
-
-      localStorage.setItem('lastVisit', new Date().getTime());
-*/
-    // Simulate loading content from the backend
     setTimeout(() => {
       setIsLoading(false);
-    }, 8000); // Adjust the time as needed
+    }, 3000); // Adjust the time as needed
+
+    const lastVisit = localStorage.getItem('lastVisit');
+
+    if (lastVisit) {
+      const currentTime = new Date().getTime();
+      const timeSinceLastVisit = currentTime - parseInt(lastVisit);
+    
+      const timeLimit = 1 * 60 * 60 * 1000;
+  
+      if (timeSinceLastVisit < timeLimit) {
+        setIsLoading(false); 
+      }
+    }
+
+    localStorage.setItem('lastVisit', new Date().getTime());
+
+    // Simulate loading content from the backend
   }, []);
 
   const toggleFadeUp = () => {
@@ -68,19 +68,39 @@ function Home() {
                   <div className='InfoCards' style={{transform: fade ? 'none' : 'translateY(calc(100% + 30px))', transition: 'all 0.4s ease-out'}}>
                     <h1>Who are we?</h1>
                     <div className='InfoCardDivider'>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In eos neque ex tempore doloribus aliquid optio eaque eum, odit, laboriosam voluptatem sunt modi mollitia sed beatae error corrupti corporis accusamus!</p>
+                      <p>CyberOps, founded in 2021, is dedicated to raising awareness about cybersecurity among students. Our mission has led us to serve over 1000 students, providing top-tier activities and resources in the field of cybersecurity. With a thriving community, we have exceeded 260 members who share a keen interest in cybersecurity.</p>
                     </div>
                   </div>
                   <div className='InfoCards' style={{transform: fade ? 'none' : 'translateY(calc(100% + 30px))', transition: 'all 0.5s ease-out'}}>
                     <h1>Our Vision</h1>
                     <div className='InfoCardDivider'>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In eos neque ex tempore doloribus aliquid optio eaque eum, odit, laboriosam voluptatem sunt modi mollitia sed beatae error corrupti corporis accusamus!</p>
+                      <p>
+                        We aspire to be an influential university
+                        club, fostering future cybersecurity
+                        leaders who contribute to a safer digital
+                        world.
+                      </p>
+                      <br></br>
+                      <br></br>
+                      <br></br>
+                      <br></br>
+                      <br></br>
                     </div>
                   </div>
                   <div className='InfoCards' style={{transform: fade ? 'none' : 'translateY(calc(100% + 30px))', transition: 'all 0.6s ease-out'}}>
                     <h1>Our Mission</h1>
                     <div className='InfoCardDivider'>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In eos neque ex tempore doloribus aliquid optio eaque eum, odit, laboriosam voluptatem sunt modi mollitia sed beatae error corrupti corporis accusamus!</p>
+                      <p>
+                        Our mission is to equip university
+                        students with advanced knowledge and
+                        skills in cybersecurity, creating an
+                        environment to learn, practice, and
+                        innovate in cybersecurity.
+                      </p>
+                      <br></br>
+                      <br></br>
+                      <br></br>
+                      <br></br>
                     </div>
                   </div>
                 </div>

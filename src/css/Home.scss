@@ -20,10 +20,10 @@
     @include themify($themes) {
       background-color: themed('homePageBackground');
     }
-
     .waves {
       position: absolute;
       bottom: 0;
+      z-index: 2;
       .waveColor {
         @include themify($themes) {
           fill: themed('bodyBackgroundColor');
