@@ -8,13 +8,13 @@
 
 .footer {
   position: relative;
-  width: 100%;
   @include themify($themes) {
     background-color: themed('homePageBackground');
     color: themed('textColor');
   }
   min-height: 100px;
   padding: 20px 50px;
+  margin-left: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,5 +82,11 @@ ul {
         color: themed('textColor');
       }
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    margin: 0;
   }
 }

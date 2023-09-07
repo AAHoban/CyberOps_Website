@@ -17,7 +17,7 @@ import {
   faClose,
   faPlus,
   faRightFromBracket,
-  faBuildingColumns
+  faMoon
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
@@ -77,29 +77,16 @@ const Sidebar = (props) => {
               <FontAwesomeIcon className='menuIcons' icon={faEnvelope} />
             </a>
           </ol>
-          <ol>
-            <a href='/eduhub' className='EducationHub-link'>
-              <FontAwesomeIcon className='meenuIcons' icon={faBuildingColumns} />
-            </a>
-          </ol>
         </div>
         <div className="toggle-btn-section">
           <div className={`toggle-checkbox m-vertical-auto`}>
             <button type="button" className={`toggle-btn__input-label lightDark-toggle`} onClick={handleThemeChange}>
               <button className='menuIcons'>
                 {theme === 'dark' ? 
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    height="1.5rem"
-                    width="1.5rem"
-                    {...props}
-                  >
-                    <path d="M12 11.807A9.002 9.002 0 0110.049 2a9.942 9.942 0 00-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 002.735-5.119A9.003 9.003 0 0112 11.807z" />
-                  </svg>
+                  <FontAwesomeIcon className='menuIcons' icon={faMoon} size='2x'/>
                   :     
                   <svg
-                    viewBox="0 0 24 24"
+                    viewBox="0 2 24 24"
                     fill="currentColor"
                     height="2rem"
                     width="2rem"
@@ -182,15 +169,7 @@ const Sidebar = (props) => {
             <button type="button" className={`toggle-btn__input-label`} onClick={handleThemeChange}>
             <button className='menuIcons'>
                 {theme === 'dark' ? 
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    height="2rem"
-                    width="2rem"
-                    {...props}
-                  >
-                    <path d="M12 11.807A9.002 9.002 0 0110.049 2a9.942 9.942 0 00-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 002.735-5.119A9.003 9.003 0 0112 11.807z" />
-                  </svg>
+                  <FontAwesomeIcon className='mobileMoonIcon' icon={faMoon} size='2x'/>
                   :     
                   <svg
                     viewBox="0 0 24 24"

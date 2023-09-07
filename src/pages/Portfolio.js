@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Footer from '../components/Footer';
 import Post from '../Post';
 import '../App.scss';
 
@@ -68,7 +67,6 @@ const Portfolio = () => {
             </>
           )}
         </div>
-        <Footer />
       </>
   )
 }

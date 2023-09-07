@@ -3,7 +3,6 @@ import '../css/Members.scss';
 import TeamCarsouelCurrent from '../components/teamCarsouel/TeamCarsouel-current';
 import TeamCarsouel23 from '../components/teamCarsouel/TeamCarsouel-2023';
 import TeamCarsouel22 from '../components/teamCarsouel/TeamCarsouel-2022';
-import Footer from '../components/Footer/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
@@ -69,7 +68,6 @@ class Members extends Component {
         <TeamCarsouel23 />
         <h2>2021 - 2022 Team</h2>
         <TeamCarsouel22 />
-        <Footer />
       </div>
     );
   }

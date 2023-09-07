@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import '../css/ContactUs.scss';
 import FAQ from '../components/FAQ';
-import Footer from '../components/Footer';
 import emailjs from '@emailjs/browser';
 
 function ContactUs() {
@@ -134,7 +133,6 @@ function ContactUs() {
           <FAQ faq={faq} index={index} key={index} toggleFAQ={toggleFAQ} />
         ))}
       </div>
-      <Footer />
     </div>
   );
 }
